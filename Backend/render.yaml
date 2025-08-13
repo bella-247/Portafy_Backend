@@ -1,0 +1,28 @@
+# render.yaml for Django project deployment on Render.com
+services:
+  - type: web
+    name: portafy-backend
+    env: python
+    plan: free
+    rootDir: Backend
+    buildCommand: |
+      pip install -r requirements/base.txt
+      pip install -r requirements/prod.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings.prod
+      - key: PYTHON_VERSION
+        value: 3.11
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - Portafy/**
+        - requirements/**
+        - requirements.txt
+    staticPublishPath: static
+    disk:
+      name: media
+      mountPath: /app/Portafy/media
+      sizeGB: 1
