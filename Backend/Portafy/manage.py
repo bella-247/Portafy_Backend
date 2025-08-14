@@ -10,7 +10,7 @@ def main():
     # This allows the application to use the correct settings based on the environment.
     os.environ.setdefault(
         "DJANGO_SETTINGS_MODULE",
-        os.getenv("DJANGO_ENV", "config.settings.dev")
+        os.getenv("DJANGO_ENV", "config.settings.prod")
     )
     
     try:

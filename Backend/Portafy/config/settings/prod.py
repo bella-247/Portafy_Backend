@@ -10,6 +10,6 @@ DATABASES = {
         "USER": "root",
         "PASSWORD": "Jt6C8PBXpEzTsTpPS73kV6MiLyE4DcFY",
         "HOST": "dpg-d2ealsbipnbc739oq060-a",
-        "PORT": "5432",   
+        "PORT": "5432",
     }
 }

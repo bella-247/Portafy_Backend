@@ -16,14 +16,25 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "portafy_db",
+#         "USER": "root",
+#         "PASSWORD": "pass123",
+#         "HOST": "localhost",
+#         "PORT": "5432",   
+#     }
+# }
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "portafy_db",
+        "NAME": "portafy",
         "USER": "root",
-        "PASSWORD": "pass123",
-        "HOST": "localhost",
-        "PORT": "5432",   
+        "PASSWORD": "Jt6C8PBXpEzTsTpPS73kV6MiLyE4DcFY",
+        "HOST": "dpg-d2ealsbipnbc739oq060-a.oregon-postgres.render.com",
+        "PORT": "5432",
     }
 }
 
