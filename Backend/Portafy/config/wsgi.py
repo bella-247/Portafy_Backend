@@ -15,7 +15,7 @@ from django.core.wsgi import get_wsgi_application
 # This allows the application to use the correct settings based on the environment.
 os.environ.setdefault(
     "DJANGO_SETTINGS_MODULE",
-    os.getenv("DJANGO_ENV", "config.settings.dev")
+    os.getenv("DJANGO_ENV", "config.settings.prod")
 )
 
 application = get_wsgi_application()

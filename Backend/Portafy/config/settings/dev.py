@@ -1,8 +1,7 @@
 from .base import *
 
 DEBUG = True
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["127.0.0.1", "portafy-backend.onrender.com"]
 
 INSTALLED_APPS += [
     "drf_yasg",
@@ -27,6 +26,10 @@ DATABASES = {
         "PORT": "5432",   
     }
 }
+
+# DATABASES = {
+#     "default": dj_database_url.config()
+# }
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"  # Optional, for storing task results
