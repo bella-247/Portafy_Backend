@@ -3,10 +3,10 @@ from .base import *
 DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1", "portafy-backend.onrender.com"]
 
-INSTALLED_APPS += [
-    "drf_yasg",
-    "debug_toolbar",
-]
+# INSTALLED_APPS += [
+#     "drf_yasg",
+#     "debug_toolbar",
+# ]
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
