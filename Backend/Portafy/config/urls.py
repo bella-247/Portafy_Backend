@@ -39,4 +39,4 @@ urlpatterns = [
 
 # for serving the uploaded files in the media folder
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
