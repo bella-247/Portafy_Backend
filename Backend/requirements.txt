@@ -26,6 +26,7 @@ django-environ==0.12.0
 django-filter==25.1
 djangorestframework==3.16.0
 djangorestframework_simplejwt==5.5.0
+dotenv==0.9.9
 drf-yasg==1.21.10
 filelock==3.18.0
 google-ai-generativelanguage==0.6.15
@@ -74,6 +75,7 @@ pytest==8.4.1
 pytest-django==4.11.1
 python-dateutil==2.9.0.post0
 python-decouple==3.8
+python-dotenv==1.1.1
 python-magic==0.4.27
 pytz==2025.2
 PyYAML==6.0.2
