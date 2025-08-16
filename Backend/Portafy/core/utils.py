@@ -1,3 +1,8 @@
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
+
 def get_main_path(request) -> str:
     """_summary_
     Extracts the main path from the full path
@@ -13,8 +18,6 @@ def get_main_path(request) -> str:
     return full_path.split(relative_path)[0]
 
 
-
-
 def gemini_api(message: str) -> str:
     """_summary_
     Connects to the Gemini API and returns the response
@@ -24,11 +27,10 @@ def gemini_api(message: str) -> str:
     Returns:
         str: the response from the API
     """
+    api_key = str(env("GEMINI_API_KEY")) if env("GEMINI_API_KEY") else ""
     try:
         import google.generativeai as genai
-        from decouple import config
-
-        genai.configure(api_key=config("GEMINI_API_KEY"))
+        genai.configure(api_key=api_key)
 
         model = genai.GenerativeModel("gemini-1.5-flash-002")
         response = model.generate_content(message)

@@ -1,12 +1,15 @@
 from .base import *
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "portafy-backend.onrender.com"]
+ALLOWED_HOSTS = []
 
-# INSTALLED_APPS += [
-#     "drf_yasg",
-#     "debug_toolbar",
-# ]
+INSTALLED_APPS +=[
+    "drf_yasg",
+    "debug_toolbar",
+]
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
@@ -16,31 +19,16 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "portafy_db",
-#         "USER": "root",
-#         "PASSWORD": "pass123",
-#         "HOST": "localhost",
-#         "PORT": "5432",   
-#     }
-# }
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "portafy",
+        "NAME": "portafy_db",
         "USER": "root",
-        "PASSWORD": "Jt6C8PBXpEzTsTpPS73kV6MiLyE4DcFY",
-        "HOST": "dpg-d2ealsbipnbc739oq060-a.oregon-postgres.render.com",
-        "PORT": "5432",
+        "PASSWORD": "pass123",
+        "HOST": "localhost",
+        "PORT": "5432",   
     }
 }
-
-# DATABASES = {
-#     "default": dj_database_url.config()
-# }
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"  # Optional, for storing task results
