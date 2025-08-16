@@ -1,9 +1,6 @@
 from .base import *
-import environ
-env = environ.Env()
-environ.Env.read_env()
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS +=[

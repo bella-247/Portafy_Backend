@@ -1,12 +1,10 @@
 from .base import *
-
-import environ
-env = environ.Env()
-environ.Env.read_env()
+import dj_database_url
+from decouple import config
 
 DEBUG = False
 ALLOWED_HOSTS = ['portafy-backend.onrender.com']
 
 DATABASES = {
-    "default": env.db()
+    "default": dj_database_url.config(default=str(config("DATABASE_URL")))
 }

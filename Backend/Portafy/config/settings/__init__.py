@@ -1,9 +1,7 @@
 # config/settings/__init__.py
-import environ
-env = environ.Env()
-environ.Env.read_env()
+from config import settings
 
-if str(env("DJANGO_ENV")).endswith("prod"):
-    from .prod import *
-else:
-    from .dev import *
+from .prod import *
+# if settings.DEBUG:
+# else:
+#     from .dev import *
